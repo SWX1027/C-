@@ -10,6 +10,7 @@ int main()
 	for(i=0;i<=2;i++){
 		t=a[i];
 		a[i]=a[5-i]; 
+		a[5-i]=t;
 	}
 	for(i=0;i<6;i++){
 		printf("%d ",a[i]);
