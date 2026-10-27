@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+/* 前缀和：s[i] = 前 i 个数的和，查询区间和 O(1) */
+int main()
+{
+    int n, q, i, L, R;
+    int a[1005];
+    int s[1005];
+
+    scanf("%d", &n);
+
+    s[0] = 0;
+    for (i = 1; i <= n; i++) {
+        scanf("%d", &a[i]);
+        s[i] = s[i - 1] + a[i];
+    }
+
+    scanf("%d", &q);
+    for (i = 1; i <= q; i++) {
+        scanf("%d%d", &L, &R);
+        printf("%d\n", s[R] - s[L - 1]);
+    }
+
+    return 0;
+}
